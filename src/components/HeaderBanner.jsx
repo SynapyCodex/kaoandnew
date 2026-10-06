@@ -43,7 +43,7 @@ export default function HeaderBanner({ currentUser, setCurrentUser, users, setti
           <div className="flex items-center gap-4 text-center sm:text-left">
             <div className="relative flex items-center justify-center">
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white shadow-md border-2 border-purple-300 flex items-center justify-center text-3xl sm:text-4xl animate-heart-float">
-                {currentProfile.avatar || '🐰'}
+                {currentProfile.avatar || (currentUser === 'user1' ? '🐶' : '🐷')}
               </div>
               <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-pink-100 border-2 border-white flex items-center justify-center text-xs shadow-xs">
                 💖
@@ -78,7 +78,7 @@ export default function HeaderBanner({ currentUser, setCurrentUser, users, setti
             {/* User Switch toggle */}
             <div className="bg-white/90 backdrop-blur-xs p-1 rounded-2xl border border-purple-200 shadow-xs flex items-center gap-1">
               <span className="text-xs font-medium text-purple-900/60 px-2 hidden sm:inline">
-                ฉันคือ:
+                ผู้ใช้งาน:
               </span>
               <button
                 type="button"
@@ -89,8 +89,8 @@ export default function HeaderBanner({ currentUser, setCurrentUser, users, setti
                     : 'text-purple-700 hover:bg-purple-100/60'
                 }`}
               >
-                <span>{users?.user1?.avatar || '🐰'}</span>
-                <span>{users?.user1?.nickname || 'เก้า'} (ฉัน)</span>
+                <span>{users?.user1?.avatar || '🐶'}</span>
+                <span>{users?.user1?.nickname || 'เก้า'}</span>
               </button>
 
               <button
@@ -102,8 +102,8 @@ export default function HeaderBanner({ currentUser, setCurrentUser, users, setti
                     : 'text-purple-700 hover:bg-pink-100/60'
                 }`}
               >
-                <span>{users?.user2?.avatar || '🐻'}</span>
-                <span>{users?.user2?.nickname || 'นิว'} (แฟน)</span>
+                <span>{users?.user2?.avatar || '🐷'}</span>
+                <span>{users?.user2?.nickname || 'นิว'}</span>
               </button>
             </div>
 

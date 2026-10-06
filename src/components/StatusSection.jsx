@@ -21,7 +21,7 @@ export default function StatusSection({
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [profileForm, setProfileForm] = useState({
     nickname: currentProfile.nickname || '',
-    avatar: currentProfile.avatar || '🐰'
+    avatar: currentProfile.avatar || (currentUser === 'user1' ? '🐶' : '🐷')
   });
 
   const [isEditingSettings, setIsEditingSettings] = useState(false);
@@ -113,35 +113,35 @@ export default function StatusSection({
             onClick={() => {
               setProfileForm({
                 nickname: currentProfile.nickname || '',
-                avatar: currentProfile.avatar || '🐰'
+                avatar: currentProfile.avatar || (currentUser === 'user1' ? '🐶' : '🐷')
               });
               setIsEditingProfile(true);
             }}
             className="px-3.5 py-2 rounded-2xl bg-white border border-purple-200 text-purple-700 text-xs font-semibold hover:bg-purple-50 flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer"
           >
             <Edit3 className="w-3.5 h-3.5" />
-            <span>แก้ไขโปรไฟล์ของฉัน</span>
+            <span>แก้ไขโปรไฟล์ {currentProfile.nickname}</span>
           </button>
         </div>
       </div>
 
-      {/* DUAL STATUS CARDS (ฉัน vs แฟน) */}
+      {/* DUAL STATUS CARDS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        {/* CARD 1: ฉัน (Current User) */}
+        {/* CARD 1: User 1 */}
         <div className="bg-gradient-to-br from-purple-50 via-white to-purple-50/50 rounded-3xl border-2 border-purple-300/80 p-6 shadow-sm flex flex-col justify-between relative overflow-hidden">
           <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-[11px] font-bold">
-            ฉันเอง (ใช้งานอยู่)
+            สถานะของ {currentProfile.nickname || 'เก้า'}
           </div>
 
           <div>
             <div className="flex items-center gap-3.5 mb-4">
               <span className="text-4xl p-2 bg-white rounded-2xl border border-purple-200 shadow-xs">
-                {currentProfile.avatar || '🐰'}
+                {currentProfile.avatar || (currentUser === 'user1' ? '🐶' : '🐷')}
               </span>
               <div>
                 <h3 className="text-lg font-bold text-slate-800">
-                  {currentProfile.nickname || 'ฉัน'}
+                  {currentProfile.nickname || 'เก้า'}
                 </h3>
                 <span className="text-xs text-slate-400">
                   อัปเดตล่าสุด: {currentProfile.updatedAt ? new Date(currentProfile.updatedAt).toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) : 'ไม่นานมานี้'}
@@ -152,7 +152,7 @@ export default function StatusSection({
             {/* Current Active Mood Display */}
             <div className="bg-white rounded-2xl p-4 border border-purple-200 shadow-2xs mb-4">
               <div className="text-xs font-bold text-slate-500 mb-1">
-                สถานะปัจจุบันของฉัน:
+                สถานะปัจจุบันของ {currentProfile.nickname || 'เก้า'}:
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">{getMoodEmoji(currentProfile.mood)}</span>
@@ -171,7 +171,7 @@ export default function StatusSection({
           {/* Quick Mood Changer */}
           <div className="pt-4 border-t border-purple-200/60">
             <span className="text-xs font-bold text-purple-950 block mb-2">
-              ⚡ อัปเดตสถานะของคุณตอนนี้:
+              ⚡ อัปเดตสถานะของ {currentProfile.nickname || 'เก้า'} ตอนนี้:
             </span>
 
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 mb-3">
@@ -197,7 +197,7 @@ export default function StatusSection({
             <div className="space-y-2">
               <input
                 type="text"
-                placeholder="เขียนข้อความบอกแฟนสั้นๆ (ถ้ามี)..."
+                placeholder="เขียนข้อความสั้นๆ (ถ้ามี)..."
                 value={moodNote}
                 onChange={(e) => setMoodNote(e.target.value)}
                 className="w-full px-3 py-2 rounded-xl bg-white border border-purple-200 text-xs focus:outline-none focus:ring-1 focus:ring-purple-400"
@@ -213,20 +213,20 @@ export default function StatusSection({
           </div>
         </div>
 
-        {/* CARD 2: แฟน (Other User) */}
+        {/* CARD 2: User 2 */}
         <div className="bg-gradient-to-br from-pink-50 via-white to-pink-50/50 rounded-3xl border-2 border-pink-300/80 p-6 shadow-sm flex flex-col justify-between relative overflow-hidden">
           <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-[11px] font-bold">
-            สถานะแฟนของคุณ 💕
+            สถานะของ {otherProfile.nickname || 'นิว'} 💕
           </div>
 
           <div>
             <div className="flex items-center gap-3.5 mb-4">
               <span className="text-4xl p-2 bg-white rounded-2xl border border-pink-200 shadow-xs">
-                {otherProfile.avatar || '🐻'}
+                {otherProfile.avatar || (currentUser === 'user1' ? '🐷' : '🐶')}
               </span>
               <div>
                 <h3 className="text-lg font-bold text-slate-800">
-                  {otherProfile.nickname || 'แฟน'}
+                  {otherProfile.nickname || 'นิว'}
                 </h3>
                 <span className="text-xs text-slate-400">
                   อัปเดตล่าสุด: {otherProfile.updatedAt ? new Date(otherProfile.updatedAt).toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) : 'ไม่นานมานี้'}
@@ -234,10 +234,10 @@ export default function StatusSection({
               </div>
             </div>
 
-            {/* Partner's Mood Display */}
+            {/* Other User's Mood Display */}
             <div className="bg-white rounded-2xl p-5 border border-pink-200 shadow-2xs mb-4">
               <div className="text-xs font-bold text-slate-500 mb-1">
-                แฟนของคุณกำลังรู้สึก:
+                {otherProfile.nickname || 'นิว'} กำลังรู้สึก:
               </div>
               <div className="flex items-center gap-2.5 my-2">
                 <span className="text-3xl animate-bounce">
@@ -253,20 +253,20 @@ export default function StatusSection({
                 </p>
               ) : (
                 <p className="text-xs text-slate-400 mt-2 italic">
-                  แฟนยังไม่ได้พิมพ์โน้ตเพิ่มเติม
+                  ยังไม่ได้พิมพ์โน้ตเพิ่มเติม
                 </p>
               )}
             </div>
           </div>
 
-          {/* Sweet Quick Actions for Partner */}
+          {/* Sweet Quick Actions */}
           <div className="pt-4 border-t border-pink-200/60 bg-pink-50/40 p-4 rounded-2xl">
             <span className="text-xs font-bold text-pink-950 block mb-2">
-              💌 เมื่อเห็นสถานะแฟนแล้ว:
+              💌 เมื่อเห็นสถานะของ {otherProfile.nickname || 'นิว'}:
             </span>
             <div className="text-xs text-slate-600 space-y-1.5 leading-relaxed">
-              <p>• ถ้าแฟนง้อ/ชิชิงอน 👉 รีบโทรหาหรือส่งข้อความไปหาเลยนะ!</p>
-              <p>• ถ้าแฟนอารมณ์ดี/รักแฟนที่สุด 👉 ส่งจุ๊บหรือนัดไปกินของอร่อยกัน</p>
+              <p>• ถ้า {otherProfile.nickname || 'นิว'} ง้อ/ชิชิงอน 👉 รีบโทรหาหรือส่งข้อความไปหาเลยนะ!</p>
+              <p>• ถ้า {otherProfile.nickname || 'นิว'} อารมณ์ดี/รักแฟนที่สุด 👉 ชวนไปกินของอร่อยกัน</p>
             </div>
           </div>
         </div>
@@ -341,7 +341,7 @@ export default function StatusSection({
           <div className="w-full max-w-sm bg-white rounded-3xl p-6 shadow-2xl border border-purple-200">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-bold text-slate-800">
-                ✏️ แก้ไขโปรไฟล์ ({currentUser === 'user1' ? 'ฉัน' : 'แฟน'})
+                ✏️ แก้ไขโปรไฟล์ ({currentProfile.nickname || (currentUser === 'user1' ? 'เก้า' : 'นิว')})
               </h3>
               <button
                 onClick={() => setIsEditingProfile(false)}
@@ -369,7 +369,7 @@ export default function StatusSection({
                   เลือกอิโมจิแทนตัว
                 </label>
                 <div className="grid grid-cols-5 gap-2 text-2xl p-2 bg-purple-50/50 rounded-2xl">
-                  {['🐰', '🐻', '🐱', '🐶', '🐼', '🦊', '🐧', '🐥', '🦄', '🍓'].map((em) => (
+                  {['🐶', '🐷', '🐱', '🐰', '🐼', '🦊', '🐧', '🐥', '🦄', '🍓'].map((em) => (
                     <button
                       key={em}
                       type="button"

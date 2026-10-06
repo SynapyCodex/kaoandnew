@@ -19,19 +19,19 @@ const defaultData = {
   users: {
     user1: {
       id: 'user1',
-      name: 'เก้า (Kao)',
+      name: 'เก้า',
       nickname: 'เก้า',
-      avatar: '🐰',
+      avatar: '🐶',
       color: 'purple',
       mood: 'รักแฟนที่สุด',
-      moodNote: 'แวะมาจุ๊บแฟนในนี้หน่อย คิดถึงจังเลย 💜',
+      moodNote: 'แวะมาจุ๊บในนี้หน่อย คิดถึงจังเลย 💜',
       updatedAt: new Date().toISOString()
     },
     user2: {
       id: 'user2',
-      name: 'นิว (New)',
+      name: 'นิว',
       nickname: 'นิว',
-      avatar: '🐻',
+      avatar: '🐷',
       color: 'indigo',
       mood: 'อารมณ์ดี',
       moodNote: 'วันนี้อารมณ์ดีมาก รอกินของอร่อยเย็นนี้ 🧋✨',
@@ -340,8 +340,8 @@ export default function App() {
                 }}
                 className="p-4 rounded-2xl bg-purple-50 hover:bg-purple-100 border-2 border-purple-300 flex flex-col items-center gap-1.5 transition-all transform hover:scale-105 cursor-pointer shadow-xs"
               >
-                <span className="text-3xl">{data.users?.user1?.avatar || '🐰'}</span>
-                <span className="font-bold text-sm text-purple-900">{data.users?.user1?.nickname || 'เก้า'} (ฉัน)</span>
+                <span className="text-3xl">{data.users?.user1?.avatar || '🐶'}</span>
+                <span className="font-bold text-sm text-purple-900">{data.users?.user1?.nickname || 'เก้า'}</span>
               </button>
 
               <button
@@ -352,8 +352,8 @@ export default function App() {
                 }}
                 className="p-4 rounded-2xl bg-pink-50 hover:bg-pink-100 border-2 border-pink-300 flex flex-col items-center gap-1.5 transition-all transform hover:scale-105 cursor-pointer shadow-xs"
               >
-                <span className="text-3xl">{data.users?.user2?.avatar || '🐻'}</span>
-                <span className="font-bold text-sm text-pink-900">{data.users?.user2?.nickname || 'นิว'} (แฟน)</span>
+                <span className="text-3xl">{data.users?.user2?.avatar || '🐷'}</span>
+                <span className="font-bold text-sm text-pink-900">{data.users?.user2?.nickname || 'นิว'}</span>
               </button>
             </div>
 

@@ -162,10 +162,10 @@ export default function TicketSection({
             </span>
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-slate-800">
-                ตั๋วสิทธิพิเศษสำหรับแฟน 🎟️
+                ตั๋วสิทธิพิเศษ 🎟️
               </h2>
               <p className="text-xs sm:text-sm text-slate-500">
-                คูปองน่ารักๆ มอบให้แฟนใช้สิทธิ์ตามใจ สามารถกดฉีกใช้งานได้จริง!
+                คูปองน่ารักๆ มอบให้กันใช้สิทธิ์ตามใจ สามารถกดฉีกใช้งานได้จริง!
               </p>
             </div>
           </div>
@@ -542,8 +542,8 @@ export default function TicketSection({
                         : 'bg-slate-50 border-slate-200 text-slate-600'
                     }`}
                   >
-                    <span>{users.user2?.avatar || '🐻'}</span>
-                    <span>ให้ {users.user2?.nickname || 'แฟน (นิว)'}</span>
+                    <span>{users.user2?.avatar || '🐷'}</span>
+                    <span>ให้ {users.user2?.nickname || 'นิว'}</span>
                   </button>
 
                   <button
@@ -555,8 +555,8 @@ export default function TicketSection({
                         : 'bg-slate-50 border-slate-200 text-slate-600'
                     }`}
                   >
-                    <span>{users.user1?.avatar || '🐰'}</span>
-                    <span>ให้ {users.user1?.nickname || 'ฉัน (เก้า)'}</span>
+                    <span>{users.user1?.avatar || '🐶'}</span>
+                    <span>ให้ {users.user1?.nickname || 'เก้า'}</span>
                   </button>
                 </div>
               </div>

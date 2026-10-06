@@ -23,19 +23,19 @@ export const initialCoupleData = {
   users: {
     user1: {
       id: 'user1',
-      name: 'เก้า (Kao)',
+      name: 'เก้า',
       nickname: 'เก้า',
-      avatar: '🐰',
+      avatar: '🐶',
       color: 'purple',
       mood: 'รักแฟนที่สุด',
-      moodNote: 'แวะมาจุ๊บแฟนในนี้หน่อย คิดถึงจังเลย 💜',
+      moodNote: 'แวะมาจุ๊บในนี้หน่อย คิดถึงจังเลย 💜',
       updatedAt: new Date().toISOString()
     },
     user2: {
       id: 'user2',
-      name: 'นิว (New)',
+      name: 'นิว',
       nickname: 'นิว',
-      avatar: '🐻',
+      avatar: '🐷',
       color: 'indigo',
       mood: 'อารมณ์ดี',
       moodNote: 'วันนี้อารมณ์ดีมาก รอกินของอร่อยเย็นนี้ 🧋✨',

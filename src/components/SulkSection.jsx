@@ -175,11 +175,6 @@ export default function SulkSection({
                         <span className="font-bold text-slate-800 text-sm sm:text-base">
                           {author.nickname}
                         </span>
-                        {isMe && (
-                          <span className="px-1.5 py-0.2 rounded-md bg-purple-100 text-purple-700 text-[10px] font-bold">
-                            ฉันเอง
-                          </span>
-                        )}
                         <span className="text-[11px] text-slate-400">
                           {new Date(sulk.createdAt).toLocaleString('th-TH')}
                         </span>
@@ -260,14 +255,14 @@ export default function SulkSection({
                     onClick={() => onHugSulk(sulk.id)}
                     className="px-3 py-1.5 rounded-xl bg-pink-50 hover:bg-pink-100 text-pink-700 border border-pink-200 text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-all transform active:scale-95"
                   >
-                    <span>🫂 ส่งกอดให้แฟน</span>
+                    <span>🫂 ส่งกอดให้</span>
                     <span className="px-1.5 py-0.2 rounded-full bg-pink-200 text-pink-800 font-bold text-[10px]">
                       {sulk.hugs || 0}
                     </span>
                   </button>
 
                   <span className="text-[11px] text-slate-400">
-                    {sulk.messages?.length || 0} ข้อความง้อ/ปรับความเข้าใจ
+                    {sulk.messages?.length || 0} ข้อความตอบกลับ
                   </span>
                 </div>
 

@@ -112,13 +112,9 @@ export default function FavoritesSection({
 
         <div className="mt-3 pt-2 border-t border-purple-50 flex items-center justify-between text-[11px] text-slate-400">
           <span>
-            {isSelfAdded ? (
-              <span className="text-purple-600">✍️ จดด้วยตัวเอง</span>
-            ) : (
-              <span className="text-pink-600 font-medium">
-                💖 จดโดยแฟน ({author.avatar} {author.nickname})
-              </span>
-            )}
+            <span className="text-purple-600 font-medium">
+              ✍️ จดโดย {author.avatar} {author.nickname}
+            </span>
           </span>
           <span className="text-[10px] font-mono">
             {new Date(item.createdAt).toLocaleDateString('th-TH')}
@@ -180,11 +176,11 @@ export default function FavoritesSection({
       {/* 2-Column Comparison Tables (User 1 vs User 2) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        {/* COLUMN 1: สิ่งที่ ฉัน (User 1) ชอบ */}
+        {/* COLUMN 1: สิ่งที่ เก้า ชอบ */}
         <div className="bg-purple-50/40 rounded-3xl border-2 border-purple-200/90 p-5 shadow-xs flex flex-col">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-purple-200/80">
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl">{users.user1?.avatar || '🐰'}</span>
+              <span className="text-2xl">{users.user1?.avatar || '🐶'}</span>
               <div>
                 <h3 className="font-bold text-slate-800 text-base">
                   สิ่งที่ {users.user1?.nickname || 'เก้า'} ชอบ
@@ -215,11 +211,11 @@ export default function FavoritesSection({
           </div>
         </div>
 
-        {/* COLUMN 2: สิ่งที่ แฟน (User 2) ชอบ */}
+        {/* COLUMN 2: สิ่งที่ นิว ชอบ */}
         <div className="bg-pink-50/40 rounded-3xl border-2 border-pink-200/90 p-5 shadow-xs flex flex-col">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-pink-200/80">
             <div className="flex items-center gap-2.5">
-              <span className="text-2xl">{users.user2?.avatar || '🐻'}</span>
+              <span className="text-2xl">{users.user2?.avatar || '🐷'}</span>
               <div>
                 <h3 className="font-bold text-slate-800 text-base">
                   สิ่งที่ {users.user2?.nickname || 'นิว'} ชอบ
@@ -284,7 +280,7 @@ export default function FavoritesSection({
                         : 'bg-slate-50 border-slate-200 text-slate-600'
                     }`}
                   >
-                    <span>{users.user1?.avatar || '🐰'}</span>
+                    <span>{users.user1?.avatar || '🐶'}</span>
                     <span>กระดาน {users.user1?.nickname || 'เก้า'}</span>
                   </button>
 
@@ -297,7 +293,7 @@ export default function FavoritesSection({
                         : 'bg-slate-50 border-slate-200 text-slate-600'
                     }`}
                   >
-                    <span>{users.user2?.avatar || '🐻'}</span>
+                    <span>{users.user2?.avatar || '🐷'}</span>
                     <span>กระดาน {users.user2?.nickname || 'นิว'}</span>
                   </button>
                 </div>

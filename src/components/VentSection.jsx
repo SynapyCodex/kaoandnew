@@ -163,11 +163,6 @@ export default function VentSection({
                         <span className="font-bold text-slate-800 text-sm sm:text-base">
                           {author.nickname}
                         </span>
-                        {isMe && (
-                          <span className="px-1.5 py-0.2 rounded-md bg-purple-100 text-purple-700 text-[10px] font-bold">
-                            ฉันเอง
-                          </span>
-                        )}
                       </div>
                       <span className="text-[11px] text-slate-400">
                         {new Date(vent.createdAt).toLocaleString('th-TH')}
@@ -200,13 +195,13 @@ export default function VentSection({
                   {vent.detail}
                 </div>
 
-                {/* "อยากให้แฟนง้อแบบไหน" Box */}
+                {/* Wants to resolve box */}
                 {vent.wantsToResolve && (
                   <div className="p-3 rounded-2xl bg-gradient-to-r from-pink-50 to-purple-50 border border-pink-200/80 flex items-start gap-2.5">
                     <span className="text-lg shrink-0">🎯</span>
                     <div className="text-xs">
                       <span className="font-bold text-pink-900 block mb-0.5">
-                        สิ่งที่อยากให้แฟนง้อ / อยากให้แฟนทำ:
+                        สิ่งที่อยากให้ทำ / วิธีง้อ:
                       </span>
                       <p className="text-slate-700 leading-relaxed">
                         {vent.wantsToResolve}
@@ -328,11 +323,11 @@ export default function VentSection({
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  อยากให้แฟนง้อแบบไหน / อยากให้แฟนทำอย่างไร
+                  อยากให้ทำแบบไหน / อยากให้ง้อแบบไหน
                 </label>
                 <textarea
                   rows="2"
-                  placeholder="เช่น อยากให้โทรหาแล้วง้อหวานๆ, อยากให้กอดแน่นๆ, พาไปกินไอติม..."
+                  placeholder="เช่น อยากให้โทรหาแล้วคุยหวานๆ, อยากให้กอดแน่นๆ, ชวนไปกินไอติม..."
                   value={formData.wantsToResolve}
                   onChange={(e) => setFormData({ ...formData, wantsToResolve: e.target.value })}
                   className="w-full px-3.5 py-2 rounded-2xl border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-xs resize-none"
@@ -351,7 +346,7 @@ export default function VentSection({
                   type="submit"
                   className="px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold shadow-md"
                 >
-                  โพสต์บอกแฟน 💕
+                  โพสต์บันทึก 💕
                 </button>
               </div>
             </form>
