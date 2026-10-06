@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #FAF7FD;
+    color: #334155;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1edfa;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c084fc;
+}
+
+/* Ticket Tear Animation */
+@keyframes tearLeft {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-4px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(-24px) rotate(-6deg) translateY(12px);
+    opacity: 0.85;
+  }
+}
+
+@keyframes tearRight {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(4px) rotate(1deg);
+  }
+  100% {
+    transform: translateX(24px) rotate(6deg) translateY(12px);
+    opacity: 0.85;
+  }
+}
+
+.animate-tear-left {
+  animation: tearLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-tear-right {
+  animation: tearRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Soft floating pulse for heart */
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.animate-heart-float {
+  animation: heartFloat 2.5s ease-in-out infinite;
+}

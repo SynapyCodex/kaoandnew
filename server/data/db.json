@@ -1,0 +1,123 @@
+{
+  "settings": {
+    "anniversaryDate": "2026-08-22",
+    "anniversaryDay": 22,
+    "quote": "ไม่ว่าจะวันไหนๆ ขอให้เรามีกันและกันเสมอ 💜"
+  },
+  "users": {
+    "user1": {
+      "id": "user1",
+      "name": "เก้า (Kao)",
+      "nickname": "เก้า",
+      "avatar": "🐰",
+      "color": "purple",
+      "mood": "รักแฟนที่สุด",
+      "moodNote": "แวะมาจุ๊บแฟนในนี้หน่อย คิดถึงจังเลย 💜",
+      "updatedAt": "2026-10-05T20:00:00.000Z"
+    },
+    "user2": {
+      "id": "user2",
+      "name": "นิว (New)",
+      "nickname": "นิว",
+      "avatar": "🐻",
+      "color": "indigo",
+      "mood": "อารมณ์ดี",
+      "moodNote": "วันนี้อารมณ์ดีมาก รอกินของอร่อยเย็นนี้ 🧋✨",
+      "updatedAt": "2026-10-06T19:11:17.808Z"
+    }
+  },
+  "tickets": [
+    {
+      "id": "t-1791314091807",
+      "title": "บัตรถามไรก็ได้ 1 คำถาม",
+      "description": "จะตอบแต่ความจริงเท่านั้นน",
+      "createdBy": "user1",
+      "targetUser": "user2",
+      "isPermanent": true,
+      "expiresAt": null,
+      "status": "active",
+      "usedAt": null,
+      "usedBy": null,
+      "themeColor": "peach",
+      "createdAt": "2026-10-06T19:14:51.807Z",
+      "history": [
+        {
+          "action": "created",
+          "by": "user1",
+          "time": "2026-10-06T19:14:51.807Z",
+          "note": "สร้างตั๋ว \"บัตรถามไรก็ได้ 1 คำถาม\""
+        }
+      ]
+    },
+    {
+      "id": "t-1791314017346",
+      "title": "บัตรตามใจ 1 วัน",
+      "description": "",
+      "createdBy": "user2",
+      "targetUser": "user2",
+      "isPermanent": true,
+      "expiresAt": null,
+      "status": "active",
+      "usedAt": null,
+      "usedBy": null,
+      "themeColor": "pink",
+      "createdAt": "2026-10-06T19:13:37.346Z",
+      "history": [
+        {
+          "action": "created",
+          "by": "user2",
+          "time": "2026-10-06T19:13:37.346Z",
+          "note": "สร้างตั๋ว \"บัตรตามใจ 1 วัน\""
+        }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "id": "c-1",
+      "title": "วันครบรอบของเราสองคน 💕 (ทุกวันที่ 22)",
+      "date": "2026-10-22",
+      "time": "00:00",
+      "category": "anniversary",
+      "note": "วันครบรอบสุดพิเศษของเราทุกเดือน ไปฉลองหรือกินของอร่อยกันนะ!",
+      "createdBy": "system",
+      "remindBeforeDays": 3,
+      "isRecurring": true
+    },
+    {
+      "id": "c-1791314176238",
+      "title": "มีส่งงานลูกค้า addon",
+      "date": "2026-10-09",
+      "time": "12:00",
+      "category": "work",
+      "note": "งานลูกค้าส่งตาม deadline ",
+      "createdBy": "user1",
+      "remindBeforeDays": 3,
+      "isRecurring": false,
+      "createdAt": "2026-10-06T19:16:16.239Z"
+    }
+  ],
+  "favorites": [],
+  "sulks": [
+    {
+      "id": "s-1",
+      "authorId": "user1",
+      "topic": "เมื่อวานตอบแชทช้าไปเกือบ 3 ชั่วโมง 🥺",
+      "detail": "เข้าใจว่าเล่นเกมหรือยุ่งอยู่ แต่บอกกันสักคำก่อนจะได้ไม่เป็นห่วงนะงับ",
+      "severity": 3,
+      "isResolved": true,
+      "resolvedAt": "2026-10-04T18:00:00.000Z",
+      "hugs": 2,
+      "messages": [
+        {
+          "id": "sm-1",
+          "fromId": "user2",
+          "text": "ขอโทษค้าบคนดี ต่อไปจะทักบอกก่อนทุกครั้งเลยนะ สัญญา กอดๆ น้า 🫂💜",
+          "createdAt": "2026-10-04T17:30:00.000Z"
+        }
+      ],
+      "createdAt": "2026-10-04T15:20:00.000Z"
+    }
+  ],
+  "vents": []
+}
